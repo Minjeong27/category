@@ -1,0 +1,854 @@
+@import url(common.css);
+
+
+/* ///////////////// 전체 /////////////////////////////////////////////////// */
+
+#txt1{position:fixed;top:100px;right:10px;}  /*스크롤바 위치확인*/
+
+
+
+
+
+/* //////////////// top버튼 ///////////////////////////////////////////////// */
+#top_btn{
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    z-index:1000;
+}
+
+#top_btn .active{
+    width:80px;
+    height:70px;
+    background:url(../image/top1.png) no-repeat;
+    display:inline-block;
+    transition:all 0.3s;
+}
+
+#top_btn .active:hover{
+    background:url(../image/top_on1.png) no-repeat;
+}
+
+
+/* //////////////// header //////////////////////////////////////////////// */
+
+header{
+  width:100%;
+  height:90px;
+  background:#090405;
+  position:relative;
+  opacity:0.9;
+  position:fixed;
+  z-index:10000;
+}
+
+
+.nav{
+  width:1400px;
+  height:90px;
+  margin:0 auto;
+}
+
+
+/* 로고________________________________________________ */
+
+.logo{
+  position:absolute;
+  left:70px;
+
+}
+
+.logo img{
+  height:90px;
+  display:inline-block;
+}
+
+/* 탑메뉴________________________________________________ */
+
+.topMenu{
+  position:absolute;
+  color:#fff;
+  font-size:18px;
+  line-height:90px;
+  right:325px;
+}
+
+.topMenu li{
+  float:left;
+  padding:0 20px;
+  transition:all 0.4s;
+  position:relative;  
+  width:110px;
+  text-align:center;
+}
+
+.topMenu li:hover{
+  color:#fff;
+  background: rgb(255, 255, 255);
+  cursor:pointer;
+}
+
+.topMenu li:hover a{
+  font-weight:bold;
+  color:#222;
+}
+
+
+.menu{
+	display:none;
+	position:absolute;
+	top:100%;
+  left:0px;
+	height:250px;
+	border:solid #e3e3e3;
+	border-width:0 1px;  
+}
+
+.menu li{width:110px;}
+
+.menu li a{
+	display:block;
+	color:#333;
+	font-size:14px;
+	line-height:10px;
+  padding:10px 0px;
+	text-align:center;
+	font-weight:normal;	
+  border-bottom:1px solid rgb(151, 48, 48,0);
+
+}
+
+.topMenu>li>.menu li:hover a{
+  border-bottom:2px solid rgb(151, 48, 48);
+}
+
+
+.bg_box{   /*100%서브배경박스*/
+	display:none;
+	width:100%;
+	height:252px; 
+	background:rgba(255,255,255);
+	border-bottom:1px solid #999;	
+}
+
+
+/* 유틸________________________________________________ */
+.util{
+  position:absolute;
+  right:100px;
+  top:37px;
+
+}
+
+.util ul{
+
+}
+
+.util ul li{
+  float:left;
+  color:#fff;
+  padding:2px 10px;
+  border-left:1px solid #fff;
+  font-weight:bold;
+}
+
+.util ul li:hover{
+  color:salmon;
+  cursor:pointer;
+}
+
+.util ul li:first-child{
+  border:0;
+}
+
+
+
+
+
+
+/* 햄메뉴________________________________________________ */
+.hamMenu .material-icons{
+  position:absolute;
+  font-size:40px;
+  padding:5px;
+  color:#fff;
+  right:30px;
+  top:20px;
+  border:1px solid #fff;
+}
+
+.hamMenu .material-icons:hover{
+  transform:scale(1.05);
+  cursor:pointer;
+}
+
+
+
+
+
+
+/* //////////////// section //////////////////////////////////////////////// */
+
+/*///////// 스크롤시 나오는버튼*/
+
+#scroll_btn{
+  width:80px;
+  height:auto;
+  position:fixed;
+  z-index:9999;
+  top:400px;
+  right:20px;
+/*   background:pink; */
+}
+
+#scroll_btn ul{
+  width:20px;
+  float:right;
+/*   background:red;  */
+} 
+
+#scroll_btn ul li{
+  width:20px;   /*jQuery에서 보여지는 가로폭 크게 변경 */
+  height:20px;
+  border-radius:50%;
+  background:#eacb05;
+  box-shadow:1px 1px 3px rgb(109, 91, 17);
+  margin-top:10px;
+  float:right;
+  overflow:hidden;
+  text-align:center;
+}
+
+#scroll_btn ul li:hover{
+  cursor:pointer;
+}
+
+#scroll_btn ul li a{
+  color:#fff;
+  line-height:20px;
+  font-size:12px;
+}
+
+#scroll_btn ul li a .scroll_hover{  /*스크롤위치에 나오는 글자부분*/
+  display:none;  /*jQuery에서 보이게 변경*/
+  width:50px;
+  text-align:center;
+  font-weight:bold;
+  vertical-align:top; 
+}
+
+
+
+/* visual________________________________________________ */
+
+/* _______________________________ */
+#visual{
+  position: relative;/*부모기준설정*/
+  width: 1400px;
+  height:781px;	
+  margin: 0 auto;
+  z-index:1000;
+}
+
+#slideShow {
+  position: absolute;
+  top:90px;
+	overflow: hidden;/*넘치는 자식 보이지않게*/
+	width: 1400px;
+  height:1000px;
+}
+
+#slideShow .slide ul {
+	position: absolute;
+	width: 5600px; /*슬라이드가 가로방향일때만->이미지의 총가로길이(940*4)*/
+
+}
+
+#slideShow .slide ul li {
+	float: left; /* 슬라이드가 가로방향일때만->가로배열 */
+}
+
+#slideShow .slide ul li img{
+  width: 1400px;
+}
+
+/*하단버튼*/
+
+#slideShow .slide_btn {
+	position: absolute;
+	bottom: 400px;
+	left: 700px;
+}
+
+#slideShow .slide_btn ul li {
+	float: left;
+	background: #fff;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 0 7px;
+	cursor: pointer;
+}
+
+#slideShow .slide_btn ul li.active {
+	background: #f8511e;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+
+/*좌우버튼*/
+#slideShow .side_btn .pre {
+	position: absolute;
+	top: 310px;
+	left: 20px;
+	width: 65px;
+	height: 65px;
+	background: url(../image/arrow_prev.png) no-repeat;
+}
+
+#slideShow .side_btn .pre:hover {
+	cursor: pointer;
+  transform:translate(-5px);
+}
+
+#slideShow .side_btn .nex {
+	position: absolute;
+	top: 310px;
+	right: 20px;
+	width: 65px;
+	height: 65px;
+	background: url(../image/arrow_next.png) no-repeat;
+}
+
+#slideShow .side_btn .nex:hover {
+	cursor: pointer;
+  transform:translate(5px);
+}
+
+
+/*Play,Stop 버튼*/
+#slideShow .playstop .stop {
+	position: absolute;
+	bottom: 399px;
+	left: 805px;
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_pause.png) no-repeat;
+}
+
+#slideShow .playstop .play {
+	position: absolute;
+	bottom: 399px;
+	left: 805px;
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_play.png) no-repeat;
+}
+
+
+/* story________________________________________________ */
+#story{
+  background:linear-gradient(to top,#fbf5de,white);
+  width:100%;
+  height:1100px;
+
+}
+.story_in{
+  width:1400px;
+  margin:0 auto;
+  position:relative;
+}
+
+.story_in .store1{
+  position:absolute;
+  top:1000px;
+  width:1400px;
+  left:50px;
+  border-radius:5px;
+}
+
+.kid{
+  position:absolute;
+  width:900px;
+  bottom:16px;
+  right:0px;
+  border-radius:10px;
+}
+
+.stext{
+  position:absolute;
+  top:0px;
+  padding-top:200px;
+  padding-left:50px;
+}
+
+.stext1{
+  font-size:50px;
+  font-weight:bold;
+  color:rgb(249, 219, 22);
+  text-shadow:1px 1px 2px #777;
+}
+
+.stext2{
+  font-size:25px;
+  font-weight:bold;
+  color:#222;
+}
+
+.stext2 span{
+  color:#ff4d51;
+  font-size:30px;
+}
+
+
+.stext3{
+  color:#222;
+  line-height:20px;
+  font-size:14px;
+}
+
+.sbutton{
+  position:absolute;
+  top:430px;
+  left:340px;
+  background:#ff4d51;
+  color:#fff;
+  padding:6px 20px;
+}
+
+.sbutton:hover{
+  background:#fff;
+  color:#ff4d51;
+  border:1px solid #ff4d51;
+  cursor:pointer;
+}
+
+.sbutton:hover a{
+  color:#ff4d51;
+}
+
+
+
+
+
+/* intro________________________________________________ */
+#intro{
+  background:linear-gradient(to bottom,#fbf5de,rgb(254, 252, 234));
+  height:1000px;
+}
+
+.intro_in{
+  width:1400px;
+  margin:0 auto;
+}
+
+
+#intro ul li{
+  float:left;
+  width:33.3%;
+  position:relative;
+  overflow:hidden;
+}
+
+#intro ul li .box{
+  position:absolute;
+  background: #000;
+  width: 100%;
+  height:100%;
+  top:0;
+  opacity:0;
+  transition:all 0.3s;
+}
+
+#intro ul li:hover .box{
+  opacity:0.6
+
+}
+
+#intro ul li img{
+  width:466px;
+  height:900px;
+  transition:all 0.5s;
+}
+
+
+#intro ul li:hover img{
+  transform:scale(1.1);
+}
+
+
+#intro ul li .ev, .st, .no{
+  position:absolute;
+  top:430px;
+  left:180px;
+  color:#fff;
+  font-weight:bold;
+  font-size:40px;
+
+  
+}
+
+#intro ul li .text1{
+  position:absolute;
+  top:470px;
+  left:130px;
+  color:#fff;
+  font-size:17px;
+  margin-top:10px;
+}
+
+#intro ul li .text2{
+  position:absolute;
+  top:470px;
+  left:80px;
+  color:#fff;
+  font-size:17px;
+  margin-top:10px;
+}
+
+
+#intro ul li .text3{
+  position:absolute;
+  top:470px;
+  left:100px;
+  color:#fff;
+  font-size:17px;
+  margin-top:10px;
+}
+
+/* open________________________________________________ */
+#open{
+  background:linear-gradient(to top,rgb(255, 240, 240),rgb(254, 252, 234));
+  width:100%;
+  height:850px;
+  
+}
+
+.new{
+  width:1400px;
+  margin:0 auto;
+  position:relative;
+}
+
+.otext{
+  position:absolute;
+  top:0px;
+  padding-top:140px;
+  padding-left:50px;
+  font-size:20px;
+  color:#ff4d51;
+  text-shadow:1px 1px 2px #777;
+}
+
+.otext1{
+  position:absolute;
+  top:0px;
+  padding-top:40px;
+  font-size:35px;
+  font-weight:bold;
+  line-height:50px;
+  width:250px;
+}
+
+.otext1 span{
+  color:#222;
+  text-shadow:none;
+  font-size:45px;
+}
+
+.otext p{
+  text-shadow:none;
+  color:#222;
+  font-size:16px;
+  line-height:50px;
+}
+
+
+@keyframes yellowball{
+  0%{top:90px;}
+  100%{top:120px;transform:scale(0.9);}
+}
+
+
+#open .new .ball{
+  display:inline-block;
+  width:1200px;
+  animation:yellowball 2s infinite alternate;
+  position:absolute;
+  left:1500px;
+  z-index:200;
+}
+
+
+#open .new .store2{
+  position:absolute;
+  top:200px;
+  left:1100px;
+  width:1500px;
+}
+
+
+@keyframes yellowball{
+  0%{top:100px;}
+  100%{top:130px;transform:scale(0.9);}
+}
+
+#open .new .ban{
+  position:absolute;
+  left:-520px;
+  top:250px;
+  width:300px;
+  z-index:1000; /* 여러효과에 의해 이미지가 깔려있을수있어 z-index써보기 */
+}
+
+#open .new .ban ul li{
+  margin-bottom:30px;
+  width:300px;
+  height:110px;
+/*   background: yellow; */
+}
+
+#open .new .ban ul li:hover{
+  background-color:rgba(255, 207, 186, 0.7);
+  cursor:pointer;
+}
+
+
+#open .new .ban ul span{
+  font-size:20px;
+  font-weight:bold;
+  margin-top:45px;
+  display:inline-block;
+  margin-left:25px;
+}
+
+#open .new .ban ul img{
+  width:110px;
+  border-radius:50%;
+}
+
+
+.obutton{
+  position:absolute;
+  top:550px;
+  left:145px;
+  background:#ff4d51;
+  color:#fff;
+  padding:6px 20px;
+  width:66px;
+}
+
+.obutton:hover{
+  background:#fff;
+  color:#ff4d51;
+  border:1px solid #ff4d51;
+  cursor:pointer;
+}
+
+.obutton:hover a{
+  color:#ff4d51;
+}
+
+
+/* sns________________________________________________ */
+#sns{
+  background:rgb(255, 240, 240);
+  width:100%;
+  height:1050px;
+}
+
+
+#sns .insta{
+  width:1400px;
+  margin:0 auto;
+}
+
+
+#sns .title{
+  font-size:40px;
+  font-weight:bold;
+  color:#222;
+  padding-top:120px;
+  padding-left:50px;
+} 
+
+
+.insta ul{
+  padding-top:80px;
+  width:1310px;
+  margin:0 auto;
+}
+
+.insta ul li{
+  float:left;
+  margin:10px;
+  position:relative;
+  transition:all 0.2s;
+}
+
+
+.insta ul li span{
+  position:absolute;
+  top:120px;
+  left:125px;
+  font-size:60px;
+  opacity:0;
+  color:#fff;
+  text-shadow:1px 1px 6px rgb(37, 15, 2);
+  transition:all 0.2s;
+}
+
+.insta ul li:hover span{
+  opacity:1;
+}
+
+
+.insta ul li img{
+  width:299px;
+  transition:all 0.2s;
+  border:4px solid rgb(255, 247, 237);
+}
+
+.insta ul li:hover img{
+  border-radius:30px;
+  transform:scale(1.05);
+  box-shadow:2px 2px 10px rgb(158, 97, 17);
+  border:4px solid rgb(255, 203, 31);
+
+}
+
+
+
+
+
+
+
+
+/* //////////////// footer //////////////////////////////////////////////// */
+
+
+
+/* footer1________________________________________________ */
+#footer1{
+  width:100%;
+  height:70px;
+  background:rgb(34, 9, 9);
+}
+
+.footer1_in{
+  width:1400px;
+  margin:0 auto;
+  position:relative;
+  font-size:15px;
+  font-weight:bold;
+}
+
+#footer1 .left1{
+
+}
+
+#footer1 .left1 ul{
+  position:absolute;
+  top:25px;
+}
+
+#footer1 .left1 ul li{
+  float:left;
+  color:#fff;
+  margin:0 20px;
+
+}
+
+#footer1 .left1 ul li:hover a{
+  color:salmon;
+}
+
+
+
+
+#footer1 .right1{
+
+}
+
+#footer1 .right1 ul{
+  position:absolute;
+  top:15px;
+  right:30px;
+}
+
+#footer1 .right1 ul li{
+  float:left;
+  color:#fff;
+}
+
+#footer1 .right1 ul li:hover{
+  float:left;
+  color:#fff;
+}
+
+
+
+#footer1 .right1 .im{
+  width:40px;
+  margin-right:5px;
+
+}
+
+
+
+/* footer2________________________________________________ */
+#footer2{
+  width:100%;
+  height:150px;
+  background:rgb(34, 9, 9);
+  border-top:1px solid rgb(248, 210, 210);
+
+}
+
+.footer2_in{
+  width:1400px;
+  margin:0 auto;
+  position:relative;
+}
+
+.f_logo{
+  position:absolute;
+  top:25px;
+}
+
+address{
+  color:#fff;
+  font-size:12px;
+  line-height:20px;
+  position:absolute;
+  top:30px;
+  left:130px;
+  font-style:normal;
+
+}
+
+.award{
+  
+}
+
+.award ul{
+  position:absolute;
+  top:40px;
+  right:30px;  
+}
+
+.award ul li{
+  float:left;
+  margin:0 10px;
+  
+}
+
+.award ul li img{
+  width:170px;
+
+}
+
+.award ul li .aw{
+  width:220px;
